@@ -2,7 +2,7 @@
   <h1>
     Извините, такой страницы нету, или она в разработке<br />
     Следите за обновлениями по ссылке:
-    <a href="https://github.com/Zoro-JS2?tab=repositories" target="_blank"
+    <a href="https://github.com/Zoro-JS2/Meditation-vue" target="_blank"
       >GITHUB</a
     >
   </h1>
