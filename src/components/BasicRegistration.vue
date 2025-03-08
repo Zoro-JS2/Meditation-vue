@@ -38,10 +38,29 @@ export default {
     };
   },
   methods: {
-    submitForm() {
+    async submitForm() {
       console.log('Форма отправлена:', this.form);
-      alert('Заявка отправлена!');
-      this.resetForm();
+
+      try {
+        // Отправка POST-запроса с данными формы на сервер
+        const response = await fetch('http://localhost:3000/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(this.form),
+        });
+
+        if (response.ok) {
+          alert('Заявка отправлена!');
+          this.resetForm();
+        } else {
+          alert('Ошибка при отправке заявки');
+        }
+      } catch (error) {
+        console.error('Ошибка:', error);
+        alert('Ошибка при отправке заявки');
+      }
     },
     resetForm() {
       this.form = {
